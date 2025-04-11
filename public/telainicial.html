@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Formulario de Control</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>Formulario de Control</h2>
+    <form id="formulario">
+      <label>Tipo:
+        <select id="tipo">
+          <option value="">-- Seleccionar --</option>
+          <option value="Toner">Toner</option>
+          <option value="Drum">Drum</option>
+        </select>
+      </label>
+      <label>Modelo:
+        <input type="text" id="modelo" />
+      </label>
+      <label>Código:
+        <input type="text" id="codigo" />
+      </label>
+      <label>Cantidad:
+        <input type="number" id="cantidad" />
+      </label>
+      <label>Estado:
+        <select id="estado">
+          <option value="Nuevo">Nuevo</option>
+          <option value="Usado">Usado</option>
+        </select>
+      </label>
+      <button type="submit">Guardar</button>
+    </form>
+    <script src="index.js" defer></script>
+  </body>
+</html>
