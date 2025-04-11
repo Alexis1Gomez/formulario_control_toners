@@ -31,9 +31,9 @@ app.get('/', (req, res) => {
 });
 
 app.post('/api/guardar', (req, res) => {
-  const { tipo, cantidad, modelo, estado, codigo } = req.body;
-  const query = 'INSERT INTO tonners (tipo, cantidad, modelo, estado, codigo) VALUES (?, ?, ?, ?, ?)';
-  db.query(query, [tipo, cantidad, modelo, estado, codigo], (err) => {
+  const { tipo, quantidade, modelo, estado, codigo } = req.body;
+  const query = 'INSERT INTO tonners (tipo, quantidade, modelo, estado, codigo) VALUES (?, ?, ?, ?, ?)';
+  db.query(query, [tipo, quantidade, modelo, estado, codigo], (err) => {
     if (err) {
       console.error(err);
       res.status(500).send('❌ Error al guardar');
