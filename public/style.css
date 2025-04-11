@@ -1,55 +1,64 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 40px;
-}
-
-.titulo {
-  display: flex;
-  justify-items: center;
-  justify-content: center;
-}
-
-.form-container {
-    padding: 100px 200px;
-    display: flex;
-    gap: 40px;
-    max-width: 900px;
-    justify-self: center;
-}
-
-.column {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f2f4f8;
+  margin: 0;
+  padding: 20px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+form {
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
 }
 
 label {
-  margin-bottom: 5px;
-  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #333;
 }
 
 input,
-select,
-textarea {
-  margin-bottom: 20px;
-  padding: 8px;
+select {
+  margin-top: 6px;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
   font-size: 14px;
-  width: 300px;
-
+  transition: border-color 0.3s ease;
 }
 
-textarea {
-  resize: vertical;
+input:focus,
+select:focus {
+  border-color: #007bff;
+  outline: none;
 }
 
 button {
-    display: flex;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    justify-self: center;
+  grid-column: span 2;
+  justify-self: center;
+  padding: 10px 24px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {

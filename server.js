@@ -1,3 +1,4 @@
+
 const express = require('express');
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
@@ -11,6 +12,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Coneccion con el banco de datos 
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -26,14 +28,19 @@ db.connect(err => {
   }
 });
 
+
+// Rota principal
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'telainicial.html'));
+  res.sendFile(path.join(__dirname, 'public', 'lista_produtos.html'));
 });
 
+// Rota de cadastro
 app.post('/api/guardar', (req, res) => {
-  const { tipo, quantidade, modelo, estado, codigo } = req.body;
-  const query = 'INSERT INTO tonners (tipo, quantidade, modelo, estado, codigo) VALUES (?, ?, ?, ?, ?)';
-  db.query(query, [tipo, quantidade, modelo, estado, codigo], (err) => {
+  const { tipo, cantidad, modelo, estado, codigo } = req.body;
+  // SQl
+  const query = 'INSERT INTO tonners (tipo, cantidad, modelo, estado, codigo) VALUES (?, ?, ?, ?, ?)';
+  // Ejecutar comando sql 
+  db.query(query, [tipo, cantidad, modelo, estado, codigo], (err) => {
     if (err) {
       console.error(err);
       res.status(500).send('❌ Error al guardar');
@@ -43,6 +50,8 @@ app.post('/api/guardar', (req, res) => {
   });
 });
 
+
+// servidor 
 app.listen(port, () => {
   console.log(`🚀 Servidor corriendo en http://localhost:${port}`);
 });
